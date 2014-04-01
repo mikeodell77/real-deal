@@ -1,0 +1,25 @@
+<%= form_for(@funding_requirement) do |f| %>
+  <% if @funding_requirement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@funding_requirement.errors.count, "error") %> prohibited this funding_requirement from being saved:</h2>
+
+      <ul>
+      <% @funding_requirement.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :desired_amount %><br>
+    <%= f.text_field :desired_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :percentage_to_give %><br>
+    <%= f.text_field :percentage_to_give %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

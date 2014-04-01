@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  desired_amount: 
+  percentage_to_give: 
+
+two:
+  desired_amount: 
+  percentage_to_give: 

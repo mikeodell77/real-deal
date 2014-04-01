@@ -1,0 +1,29 @@
+<h1>Listing funding_requirements</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Desired amount</th>
+      <th>Percentage to give</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @funding_requirements.each do |funding_requirement| %>
+      <tr>
+        <td><%= funding_requirement.desired_amount %></td>
+        <td><%= funding_requirement.percentage_to_give %></td>
+        <td><%= link_to 'Show', funding_requirement %></td>
+        <td><%= link_to 'Edit', edit_funding_requirement_path(funding_requirement) %></td>
+        <td><%= link_to 'Destroy', funding_requirement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Funding requirement', new_funding_requirement_path %>

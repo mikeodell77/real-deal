@@ -1,4 +1,8 @@
 RealDeal::Application.routes.draw do
+  resources :presentations
+
+  resources :funding_requirements
+
   resources :companies
 
   # The priority is based upon order of creation: first created -> highest priority.

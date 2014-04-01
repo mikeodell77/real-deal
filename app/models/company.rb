@@ -7,4 +7,7 @@ class Company
   field :state, type: String
   field :zip, type: String
   field :phone, type: String
+
+  embeds_one :funding_requirement
+  embeds_many :presentations
 end
