@@ -15,6 +15,7 @@ class CompaniesController < ApplicationController
   # GET /companies/new
   def new
     @company = Company.new
+    @company.funding_requirement = FundingRequirement.new
   end
 
   # GET /companies/1/edit
@@ -71,6 +72,6 @@ class CompaniesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def company_params
       puts "What are the params : #{params}"
-      params.require(:company).permit(:name, :address1, :address2, :city, :state, :zip, :phone, {:funding_requirement => [:desired_amount]}, {:presentations => []})
+      params.require(:company).permit(:name, :address1, :address2, :city, :state, :zip, :phone, funding_requirement_attributes: [:desired_amount, :percentage_to_give ], presentation_attributes: [:url])
     end
 end
