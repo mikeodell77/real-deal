@@ -10,6 +10,8 @@
       <th>State</th>
       <th>Zip</th>
       <th>Phone</th>
+      <th>Desired Funding</th>
+      <th>Maximum Percentage</th>
       <th></th>
       <th></th>
       <th></th>
@@ -26,6 +28,8 @@
         <td><%= company.state %></td>
         <td><%= company.zip %></td>
         <td><%= company.phone %></td>
+        <td><%= company.funding_requirement.desired_amount unless company.funding_requirement.nil? %></td>
+        <td><%= company.funding_requirement.percentage_to_give unless company.funding_requirement.nil? %></td>
         <td><%= link_to 'Show', company %></td>
         <td><%= link_to 'Edit', edit_company_path(company) %></td>
         <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>

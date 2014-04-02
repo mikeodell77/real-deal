@@ -42,8 +42,13 @@
 
   <%= f.fields_for :funding_requirement do |funding| %>
     <div class="field">
-    <%= funding.label :desired_amount %><br>
-    <%= funding.text_field :desired_amount %>
+      <%= funding.label :desired_amount %><br>
+      <%= funding.text_field :desired_amount %>
+    </div>
+
+    <div class="field">
+      <%= funding.label :percentage_to_give %><br>
+      <%= funding.text_field :percentage_to_give %>
     </div>
 
   <% end %>
