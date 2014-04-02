@@ -10,4 +10,6 @@ class Company
 
   embeds_one :funding_requirement
   embeds_many :presentations
+
+  accepts_nested_attributes_for :funding_requirement, :presentations
 end

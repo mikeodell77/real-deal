@@ -41,6 +41,7 @@ class CompaniesController < ApplicationController
   # PATCH/PUT /companies/1.json
   def update
     respond_to do |format|
+      puts "params : "
       if @company.update(company_params)
         format.html { redirect_to @company, notice: 'Company was successfully updated.' }
         format.json { head :no_content }
@@ -69,6 +70,7 @@ class CompaniesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def company_params
-      params.require(:company).permit(:name, :address1, :address2, :city, :state, :zip, :phone)
+      puts "What are the params : #{params}"
+      params.require(:company).permit(:name, :address1, :address2, :city, :state, :zip, :phone, {:funding_requirement => [:desired_amount]}, {:presentations => []})
     end
 end
