@@ -20,6 +20,11 @@ class CompaniesController < ApplicationController
 
   # GET /companies/1/edit
   def edit
+    puts ">>>>>> What are my params : #{params.inspect}"
+    @copmany = Company.find(params[:id])
+    if @company.funding_requirement.nil?
+      @company.funding_requirement = FundingRequirement.new
+    end
   end
 
   # POST /companies
@@ -72,6 +77,6 @@ class CompaniesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def company_params
       puts "What are the params : #{params}"
-      params.require(:company).permit(:name, :address1, :address2, :city, :state, :zip, :phone, funding_requirement_attributes: [:desired_amount, :percentage_to_give ], presentation_attributes: [:url])
+      params.require(:company).permit(:id, :name, :address1, :address2, :city, :state, :zip, :phone, funding_requirement_attributes: [:desired_amount, :percentage_to_give ], presentation_attributes: [:url])
     end
 end
