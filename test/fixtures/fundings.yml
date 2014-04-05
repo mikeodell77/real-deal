@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount: 
+  percentage: 1.5
+  approved: false
+
+two:
+  amount: 
+  percentage: 1.5
+  approved: false

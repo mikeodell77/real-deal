@@ -1,9 +1,13 @@
 RealDeal::Application.routes.draw do
+  resources :fundings
+
   resources :presentations
 
   resources :funding_requirements
 
   resources :companies
+
+  root 'companies#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
