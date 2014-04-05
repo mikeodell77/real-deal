@@ -1,4 +1,5 @@
 RealDeal::Application.routes.draw do
+  devise_for :users
   resources :fundings
 
   resources :presentations

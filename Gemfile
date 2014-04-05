@@ -43,3 +43,4 @@ end
 # gem 'debugger', group: [:development, :test]
 gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
 gem 'foundation-rails'
+gem 'devise', '~> 3.0.0.rc'
