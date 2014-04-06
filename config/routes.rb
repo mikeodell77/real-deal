@@ -1,4 +1,5 @@
 RealDeal::Application.routes.draw do
+  get "welcome/index"
   devise_for :users
   resources :fundings
 
@@ -8,7 +9,8 @@ RealDeal::Application.routes.draw do
 
   resources :companies
 
-  root 'companies#index'
+  # root 'companies#index'
+  root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

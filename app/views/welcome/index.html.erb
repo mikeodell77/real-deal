@@ -1,0 +1,23 @@
+
+<div class="container">
+  <div class='row'>
+    <iframe width="560" height="315" src="//www.youtube.com/embed/DTqG35ko3wg" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <div class="row">
+    <div class="span9">
+    Real Deal
+      <% @tags.each do |res| %>
+        <p>
+          <%= image_tag res.attrs[:user][:profile_image_url] %>
+          <%= link_to res.attrs[:user][:screen_name],"https://twitter.com/#{res.attrs[:user][:screen_name]}" %>
+        </p>
+        <!-- %p= res.attrs[:user]
+        -->
+        <p>
+          <%= res.attrs[:text] %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>
