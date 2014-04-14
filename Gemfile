@@ -44,4 +44,4 @@ end
 gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
 gem 'foundation-rails'
 gem 'devise', '~> 3.0.0.rc'
-gem "twitter"
+gem "twitter", '5.0.0.rc.1'
