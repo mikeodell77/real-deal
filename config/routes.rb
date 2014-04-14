@@ -1,5 +1,5 @@
 RealDeal::Application.routes.draw do
-  get "welcome/index"
+  get "tweets", to: 'welcome#tweets'
   devise_for :users
   resources :fundings
 

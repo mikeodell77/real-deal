@@ -1,5 +1,8 @@
 class WelcomeController < ApplicationController
   def index
-    @tags = Twitter.search("#real-deal -rt").results
+  end
+  def tweets
+    @tags = Tweets.client.search("#real-deal -rt")
+    render layout: false
   end
 end

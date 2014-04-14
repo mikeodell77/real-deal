@@ -1,0 +1,14 @@
+
+    Real Deal
+      <% @tags.each do |res| %>
+        <p>
+          <%= image_tag res.attrs[:user][:profile_image_url] %>
+          <%= link_to res.attrs[:user][:screen_name],"https://twitter.com/#{res.attrs[:user][:screen_name]}" %>
+        </p>
+        <!-- %p= res.attrs[:user]
+        -->
+        <p>
+          <%= res.attrs[:text] %>
+        </p>
+      <% end %>
+
