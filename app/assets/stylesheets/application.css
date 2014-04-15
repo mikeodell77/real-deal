@@ -14,6 +14,12 @@
  *= require_tree .
  */
 
+a.button {
+  &:visited {
+    color: #fff !important;
+  }
+}
+
 .standalone-tweet {
     background: none repeat scroll 0 0 #FFFFFF;
     border-radius: 5px;

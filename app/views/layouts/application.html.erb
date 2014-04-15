@@ -12,7 +12,11 @@
   </head>
 
   <body>
-    <%= render partial: "layouts/menu" %>
+    <% if current_user.admin? %>
+      <%= render partial: "layouts/admin_menu" %>
+    <% else %>
+      <%= render partial: "layouts/menu" %>
+    <% end %>
     <br>
     <%= yield %>
     <%= javascript_include_tag "application" %>
