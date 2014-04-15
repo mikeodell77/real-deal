@@ -15,9 +15,7 @@
  */
 
 a.button {
-  &:visited {
-    color: #fff !important;
-  }
+  color: #fff !important;
 }
 
 .standalone-tweet {
