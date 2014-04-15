@@ -13,3 +13,13 @@
 
  *= require_tree .
  */
+
+.standalone-tweet {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 5px;
+    padding: 8px 8px 0;
+}
+
+.standalone-tweet .subject {
+    margin-top: 4px;
+}
