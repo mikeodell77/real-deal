@@ -3,10 +3,19 @@
       <% @tags.each do |res| %>
         <div class="twitter-block">
           <div class="standalone-tweet">
-            <p>
+
               <%= image_tag res.attrs[:user][:profile_image_url] %>
-              <%= link_to res.attrs[:user][:screen_name],"https://twitter.com/#{res.attrs[:user][:screen_name]}" %>
-            </p>
+              <a href="https://twitter.com/<%=res.attrs[:user][:screen_name]%>">
+              <span class="full-name">
+                  <span data-scribe="element:name" class="p-name customisable-highlight"><%=res.attrs[:user][:name]%>
+                  </span>
+              </span></a>
+              <a href="https://twitter.com/share" class="twitter-share-button" data-url="practicalecommerce.com" data-count="none" data-via="<%=res.attrs[:user][:screen_name]%>">Tweet</a>
+              <a href="https://twitter.com/<%=res.attrs[:user][:screen_name]%>" class="twitter-follow-button">Follow @<%=res.attrs[:user][:screen_name]%></a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+
+
+
+
             <!-- %p= res.attrs[:user]
             -->
             <p>

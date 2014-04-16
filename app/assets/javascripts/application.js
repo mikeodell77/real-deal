@@ -21,7 +21,7 @@ $(function(){ $(document).foundation(); });
 var twitter = {
     container: $('#tweets_container'),
     loading_image: $('#twitter_loading'),
-    update_interval: 6000, //7 minutes
+    update_interval: 40000, //7 minutes
     clearTimeout: function() {
         if (this.timer_id) {
             clearTimeout(this.timer_id)
