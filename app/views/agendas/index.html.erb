@@ -1,0 +1,6 @@
+<h1>Listing agendas</h1>
+<div class="push-10 columns">
+  <%= link_to 'New Agenda', new_agenda_path, class: "button" %>  
+</div>
+
+<%= render partial: 'agenda_item', collection: @agendas, as: :agenda %>

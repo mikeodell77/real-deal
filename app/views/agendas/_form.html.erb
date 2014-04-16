@@ -1,0 +1,38 @@
+<%= form_for(@agenda) do |f| %>
+  <div class="row">
+    <div class="large-8 columns">
+      <% if @agenda.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@agenda.errors.count, "error") %> prohibited this agenda from being saved:</h2>
+
+          <ul>
+          <% @agenda.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <%= f.label(:start_date_time) do %>
+            Start Date Time
+            <%= f.text_field :start_date_time %>          
+          <% end %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <%= f.label(:end_date_time) do %>
+            End Date Time
+            <%= f.datetime_field :end_date_time %>          
+          <% end %>
+        </div>
+      </div>      
+
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    </div>
+<% end %>

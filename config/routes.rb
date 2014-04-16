@@ -9,6 +9,8 @@ RealDeal::Application.routes.draw do
 
   resources :companies
 
+  resources :agendas
+  
   # root 'companies#index'
   root 'welcome#index'
 
