@@ -1,0 +1,23 @@
+<%= link_to (edit_company_path(company)) do %>
+    <div class="large-12 columns">
+      <div class="item">
+          <div class="large-4 columns">
+            <h1 class="title">
+              <%= company.name %>
+            </h1>
+          </div>
+          <div class="large-4 columns">
+            <p>
+              <%= company.address1 %><br>
+              <%= company.city %>, <%= company.state %> <%= company.zip %>
+            </p>
+          </div>
+          <div class="large-4 columns">
+            <p>
+              Desired Funding: 
+              <%= company.funding_requirement.desired_amount %>
+            </p>
+          </div>        
+        </div>
+    </div>
+<% end %>
