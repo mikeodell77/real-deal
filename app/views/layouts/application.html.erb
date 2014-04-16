@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <% if current_user.admin? %>
+    <% if current_user && current_user.admin? %>
       <%= render partial: "layouts/admin_menu" %>
     <% else %>
       <%= render partial: "layouts/menu" %>

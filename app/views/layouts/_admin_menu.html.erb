@@ -8,10 +8,12 @@
   <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="right">
+      <li><%= link_to "Welcome, #{current_user.email} (signout)", destroy_user_session_path, method: :delete %></li>    
       <li class="active"><a href="#">Right Button Active</a></li>
       <li class="has-dropdown">
         <a href="#">Right Button Dropdown</a>
         <ul class="dropdown">
+
           <li><a href="#">First link in dropdown</a></li>
         </ul>
       </li>
