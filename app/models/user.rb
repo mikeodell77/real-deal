@@ -10,6 +10,8 @@ class User
   field :email,              :type => String, :default => ""
   field :encrypted_password, :type => String, :default => ""
   field :admin,              :type => Boolean, :default => false
+  field :funder,             :type => Boolean, :default => false
+  field :company,            :type => Boolean, :default => false
   
   ## Recoverable
   field :reset_password_token,   :type => String

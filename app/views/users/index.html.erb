@@ -1,0 +1,45 @@
+<h1>Users#index</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Admin</th>
+      <th>Funder</th>
+      <th>Company</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td>
+          <%= user.email %> <br/>
+        </td>
+        <td><%= user.admin %></td>
+        <td><%= user.funder %></td>
+        <td><%= user.company %></td>
+        <td><%= link_to "Edit", edit_registration_path(user) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<!-- 
+
+<table>
+  <thead>
+    <tr>
+      <th width="200">Table Header</th>
+      <th>Table Header</th>
+      <th width="150">Table Header</th>
+      <th width="150">Table Header</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Content Goes Here</td>
+      <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+      <td>Content Goes Here</td>
+      <td>Content Goes Here</td>
+    </tr>
+ -->
