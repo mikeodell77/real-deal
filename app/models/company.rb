@@ -18,7 +18,7 @@ class Company
   def sum_fundings
     funds = 0;
     fundings.each do |funding|
-      funds += funding.amount
+      funds += funding.amount unless funding.unverified
     end
 
     funds
