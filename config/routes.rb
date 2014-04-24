@@ -11,8 +11,6 @@ RealDeal::Application.routes.draw do
   resources :companies
 
   resources :agendas
-
-  resources :users
   
   # root 'companies#index'
   root 'welcome#index'

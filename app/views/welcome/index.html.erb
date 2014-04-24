@@ -1,46 +1,15 @@
 <div class='row'>
   <div class='large-7 columns'>
-    <!-- <iframe width="560" height="315" src="//www.youtube.com/embed/DTqG35ko3wg" frameborder="0" allowfullscreen></iframe>
- -->
-    <% if @stream_url %>
-      <iframe width="720" height="437" src="<%=@stream_url%>" scrolling="no" frameborder="0" style="border: 0px none transparent;">    </iframe>
-    <% end %>
-<br />
-
-<!-- <iframe width="360" height="235" src="<%=params[:stream_url]%>" scrolling="no" frameborder="0" style="border: 0px none transparent;">    </iframe> -->
-<br />
-
+    <%= render partial: 'video' %>
   </div>
-
-  <div class="large-5 columns">
-    <div class="row">
-      <% @companies.each do |company| %>
-        <div class="large-4 columns">
-          <div class="company-block">
-            <div class="standalone-tweet">
-              <h3><small><%= company.name %></small></h3>
-              <h4><small><%= company.funding_requirement.desired_amount %></small></h4>
-              <h4><small>123.12</small></h4>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>  
-</div>
-
-<div class="row">
-  <div class="large-7 columns">
-    <%= image_tag "loading.gif", :id => 'twitter_loading', :alt => "Loading", :style => "display: none" %>
-    <div id='tweets_container'>
-    </div>
-  </div>
-
   <div class='large-5 columns'>
-    <% @companies.each do |company| %>
-      <h2><%= company.name %></h2><h6><%= company.address1 %></h6>
-
-    <% end %>
+    <%= render partial: 'scorecards' %>
   </div>
+  
 
+
+  <div class="row">
+    <%= render partial: 'tweets' %>
+    <%= render partial: 'fund' %>
+  </div>
 </div>
