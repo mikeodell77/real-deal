@@ -1,6 +1,4 @@
-<%= image_tag "loading.gif", :id => 'score_loading', :alt => "Loading", :style => "display: none" %>
-<div id="ajax" class="row">
-  <% @companies.each do |company| %>
+<% @companies.each do |company| %>
     <div class="large-6 columns">
       <div class="company-block">
         <div class="standalone-tweet">
@@ -11,4 +9,3 @@
       </div>
     </div>
   <% end %>
-</div>

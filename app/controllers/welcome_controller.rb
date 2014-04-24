@@ -13,4 +13,11 @@ class WelcomeController < ApplicationController
     @tags = Tweets.client.search("#realDealTriangle -rt")
     render layout: false
   end
+
+  def scorecards
+    # @tags = Tweets.client.search("#real-deal -rt")
+    @companies = Company.all.to_a
+    render layout: false
+  end
+
 end
