@@ -1,6 +1,15 @@
 <div class='row'>
   <div class='large-7 columns'>
-    <iframe width="560" height="315" src="//www.youtube.com/embed/DTqG35ko3wg" frameborder="0" allowfullscreen></iframe>
+    <!-- <iframe width="560" height="315" src="//www.youtube.com/embed/DTqG35ko3wg" frameborder="0" allowfullscreen></iframe>
+ -->
+    <% if @stream_url %>
+      <iframe width="720" height="437" src="<%=@stream_url%>" scrolling="no" frameborder="0" style="border: 0px none transparent;">    </iframe>
+    <% end %>
+<br />
+
+<!-- <iframe width="360" height="235" src="<%=params[:stream_url]%>" scrolling="no" frameborder="0" style="border: 0px none transparent;">    </iframe> -->
+<br />
+
   </div>
 
   <div class="large-5 columns">
@@ -16,7 +25,7 @@
         </div>
       <% end %>
     </div>
-  </div>  
+  </div>
 
 
 </div>
@@ -36,5 +45,5 @@
 
     <% end %>
   </div>
-  
+
 </div>
