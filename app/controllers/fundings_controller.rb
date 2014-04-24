@@ -29,11 +29,14 @@ class FundingsController < ApplicationController
 
     # check the entered email address with the user table
     found_email = User.where(:email => /#{params[:funding][:email]}/ )
-
+    @funding.percentage = @funding.percentage / 100 unless @funding.percentage == 0
 
     if found_email.blank?
       @funding.unverified = true
     end
+
+    # load up data for our scorecards
+    @companies = Company.all.to_a
 
     respond_to do |format|
       if @funding.save
