@@ -76,6 +76,7 @@ production:
       # replica set connection setup.
       # Use environment variables or a config file to keep your
       # credentials safe.
+      database: real_deal_prod
       uri: 'mongodb://heroku_app24475645:226ak02gct5dqi0bsi2dumm3q4@dbh36.mongolab.com:27367/heroku_app24475645'
 
       options:
@@ -83,7 +84,7 @@ production:
         #secondaries when possible.
         # Strong forces reads to primary.
         # We recommend using strong consistency.
-        consistency: :strong
+        # consistency: :strong
 
         # max_retries specifies the number of times to attempt
         # an operation before giving up.
