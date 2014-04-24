@@ -4,8 +4,8 @@
       <div class="company-block">
         <div class="standalone-tweet">
           <h3><small><%= company.name %></small></h3>
-          <h4><small><%= company.funding_requirement.desired_amount %></small></h4>
-          <h4><small><%= company.sum_fundings%></small></h4>
+          <h4><small><%= number_to_currency(company.funding_requirement.desired_amount) %></small></h4>
+          <h4><small><%= number_to_currency(company.sum_fundings)%></small></h4>
         </div>
       </div>
     </div>

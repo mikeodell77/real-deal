@@ -27,6 +27,14 @@ class FundingsController < ApplicationController
     puts "What are the params : #{params.inspect}"
     @funding = Funding.new(funding_params)
 
+    # check the entered email address with the user table
+    found_email = User.where(:email => /#{params[:funding][:email]}/ )
+
+
+    if found_email.blank?
+      @funding.unverified = true
+    end
+
     respond_to do |format|
       if @funding.save
         format.html { redirect_to @funding, notice: 'Funding was successfully created.' }
@@ -72,6 +80,6 @@ class FundingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def funding_params
-      params.require(:funding).permit(:amount, :percentage, :approved, :company)
+      params.require(:funding).permit(:amount, :percentage, :approved, :company, :email, :unverified)
     end
 end

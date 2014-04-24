@@ -3,7 +3,9 @@ class Funding
   field :amount, type: BigDecimal
   field :percentage, type: Float
   field :approved, type: Mongoid::Boolean
-
-  embeds_one :user
+  field :email, type: String
+  field :unverified, type: Boolean, default: false
+  
   belongs_to :company
+
 end
