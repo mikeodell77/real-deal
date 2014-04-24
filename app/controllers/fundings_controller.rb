@@ -1,4 +1,5 @@
 class FundingsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_funding, only: [:show, :edit, :update, :destroy]
 
   # GET /fundings
