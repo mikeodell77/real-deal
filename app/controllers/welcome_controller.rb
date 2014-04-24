@@ -5,6 +5,7 @@ class WelcomeController < ApplicationController
   def index
     @companies = Company.all.to_a
     @stream_url = params[:stream_url]
+    @funding = Funding.new
   end
 
   def tweets

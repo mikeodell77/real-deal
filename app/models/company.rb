@@ -10,7 +10,17 @@ class Company
 
   embeds_one :funding_requirement
   embeds_many :presentations
-  embeds_many :fundings
+  has_many :fundings
 
   accepts_nested_attributes_for :funding_requirement, :presentations
+
+
+  def sum_fundings
+    funds = 0;
+    fundings.each do |funding|
+      funds += funding.amount
+    end
+
+    funds
+  end
 end
