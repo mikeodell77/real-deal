@@ -1,29 +1,40 @@
 <%= form_for(@funding) do |f| %>
-  <% if @funding.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@funding.errors.count, "error") %> prohibited this funding from being saved:</h2>
+  <div class="row">
+    <div class="large-8 columns">
+      <% if @funding.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@funding.errors.count, "error") %> prohibited this funding from being saved:</h2>
 
-      <ul>
-      <% @funding.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+          <ul>
+          <% @funding.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :amount %><br>
-    <%= f.text_field :amount %>
-  </div>
-  <div class="field">
-    <%= f.label :percentage %><br>
-    <%= f.text_field :percentage %>
-  </div>
-  <div class="field">
-    <%= f.label :approved %><br>
-    <%= f.check_box :approved %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+      <div class="row">
+        <div class="large-12 columns">
+        <%= f.collection_select :company, Company.all.to_a, :id, :name, {include_blank: true}, class: "chosen", data: {placeholder: "Select a Company"} %>
+        
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <%= f.text_field :amount, placeholder: 'Enter amount to fund' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <%= f.text_field :percentage, placeholder: 'Enter percentage for amount' %>
+        </div>
+      </div>
+
+      <div class="actions">
+        <%= f.submit 'Submit', class: 'button' %>
+      </div>
+    </div>
   </div>
 <% end %>
