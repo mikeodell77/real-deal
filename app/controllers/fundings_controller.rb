@@ -69,6 +69,6 @@ class FundingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def funding_params
-      params.require(:funding).permit(:amount, :percentage, :approved)
+      params.require(:funding).permit(:amount, :percentage, :approved, funding_attributes: [:amount, :percentage, :company, :user])
     end
 end
