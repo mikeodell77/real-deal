@@ -69,56 +69,8 @@ var twitter = {
     }
 };
 
-var scorecard = {
-    container: $('#ajax'),
-    loading_image: $('#score_loading'),
-    update_interval: 40000, //7 minutes
-    clearTimeout: function() {
-        if (this.timer_id) {
-            clearTimeout(this.timer_id)
-        }
-    },
-    autoUpdate: function() {
-        var self = this;
-        self.clearTimeout();
-        self.timer_id = setTimeout(function() {
-            self.initialize();
-        }, self.update_interval);
-    },
-    initialize: function() {
-        var self = this;
-        self.clearTimeout();
-        if ($('#ajax').size() > 0) {
-            $.ajax({
-                type: 'get',
-                url: "/scores",
-                data: {},
-                dataType: 'html',
-                ifModified: true,
-                beforeSend: function() {
-                    // self.container.hide('slow');
-                    self.loading_image.show('fast');
-                },
-                success: function(data, status) {
-                    if (status != 'notmodified') {
-                        // alert(data);
-                        self.container.fadeOut(1200, function() {
-                            $(this).html(data);
-                            $(this).fadeIn(1200);
-                        });
-                    }
-                    self.loading_image.hide('fast');
-                    self.autoUpdate();
-                },
-                error: function() {
-                    self.loading_image.hide('fast');
-                    self.autoUpdate();
-                }
-            });
-        }
-    }
-};
+
 
 twitter.initialize();
-scorecard.initialize();
+
 });
