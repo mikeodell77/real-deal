@@ -18,7 +18,7 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
-
+$(document).ready(function(){
 var twitter = {
     container: $('#tweets_container'),
     loading_image: $('#twitter_loading'),
@@ -118,5 +118,7 @@ var scorecard = {
         }
     }
 };
+
 twitter.initialize();
 scorecard.initialize();
+});
