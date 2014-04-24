@@ -24,15 +24,18 @@ class FundingsController < ApplicationController
   # POST /fundings
   # POST /fundings.json
   def create
+    puts "What are the params : #{params.inspect}"
     @funding = Funding.new(funding_params)
 
     respond_to do |format|
       if @funding.save
         format.html { redirect_to @funding, notice: 'Funding was successfully created.' }
         format.json { render action: 'show', status: :created, location: @funding }
+        format.js
       else
         format.html { render action: 'new' }
         format.json { render json: @funding.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -69,6 +72,6 @@ class FundingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def funding_params
-      params.require(:funding).permit(:amount, :percentage, :approved, funding_attributes: [:amount, :percentage, :company, :user])
+      params.require(:funding).permit(:amount, :percentage, :approved, :company)
     end
 end

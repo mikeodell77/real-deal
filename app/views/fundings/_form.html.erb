@@ -1,4 +1,7 @@
-<%= form_for(@funding) do |f| %>
+<div id="alert"></div>
+
+
+<%= form_for @funding, :remote => true do |f| %>
   <div class="row">
     <div class="large-8 columns">
       <% if @funding.errors.any? %>
@@ -15,20 +18,29 @@
 
       <div class="row">
         <div class="large-12 columns">
-        <%= f.collection_select :company, Company.all.to_a, :id, :name, {include_blank: true}, class: "chosen", data: {placeholder: "Select a Company"} %>
+          <%= f.label(:company) do %>
+            Company
+            <%= f.collection_select :company, Company.all.to_a, :id, :name, {include_blank: true}, class: "chosen", data: {placeholder: "Select a Company"} %>
+          <% end %>
         
         </div>
       </div>
 
       <div class="row">
         <div class="large-12 columns">
-          <%= f.text_field :amount, placeholder: 'Enter amount to fund' %>
+          <%= f.label(:amount) do %>
+            Amount
+            <%= f.text_field :amount, placeholder: 'Enter amount to fund' %>
+          <% end %>
         </div>
       </div>
 
       <div class="row">
         <div class="large-12 columns">
-          <%= f.text_field :percentage, placeholder: 'Enter percentage for amount' %>
+          <%= f.label(:percentage) do %>
+            Percentage
+            <%= f.text_field :percentage, placeholder: 'Enter percentage for amount' %>
+          <% end %>
         </div>
       </div>
 

@@ -5,5 +5,5 @@ class Funding
   field :approved, type: Mongoid::Boolean
 
   embeds_one :user
-  embedded_in :company
+  belongs_to :company
 end
