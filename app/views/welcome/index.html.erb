@@ -1,12 +1,6 @@
 <div class='row'>
   <div class='large-7 columns'>
-    <% if @stream_url %>
-      <div class="flex-video">
-        <iframe width="720" height="437" src="<%=@stream_url%>" scrolling="no" frameborder="0" style="border: 0px none transparent;">    </iframe>
-      </div>
-    <% end %>
-    <br />
-    <br />
+    <%= render partial: 'video' %>
   </div>
   <div class='large-5 columns'>
     <%= render partial: 'scorecards' %>
