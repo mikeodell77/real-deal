@@ -1,4 +1,5 @@
 class PresentationsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_presentation, only: [:show, :edit, :update, :destroy]
 
   # GET /presentations

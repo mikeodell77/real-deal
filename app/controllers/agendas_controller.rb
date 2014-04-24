@@ -1,4 +1,5 @@
 class AgendasController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_agenda, only: [:show, :edit, :update, :destroy]
 
   # GET /agendas
