@@ -44,6 +44,15 @@
         </div>
       </div>
 
+      <div class="row">
+        <div class="large-12 columns">
+          <%= f.label(:email) do %>
+            Email Address
+            <%= f.text_field :email, placeholder: 'Enter your email address' %>
+          <% end %>
+        </div>
+      </div>      
+
       <div class="actions">
         <%= f.submit 'Submit', class: 'button' %>
       </div>

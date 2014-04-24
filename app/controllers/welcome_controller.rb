@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   before_action :route_by_user_type
 
   def index

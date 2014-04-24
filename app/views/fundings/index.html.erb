@@ -7,6 +7,8 @@
       <th>Percentage</th>
       <th>Approved</th>
       <th>Company</th>
+      <th>Funder</th>
+      <th>unverified</th>
       <th></th>
       <th></th>
       <th></th>
@@ -20,6 +22,8 @@
         <td><%= funding.percentage %></td>
         <td><%= funding.approved %></td>
         <td><%= funding.company.name unless funding.company.nil? %></td>
+        <td><%= funding.email %></td>
+        <th><%= funding.unverified %></th>
         <td><%= link_to 'Show', funding %></td>
         <td><%= link_to 'Edit', edit_funding_path(funding) %></td>
         <td><%= link_to 'Destroy', funding, method: :delete, data: { confirm: 'Are you sure?' } %></td>

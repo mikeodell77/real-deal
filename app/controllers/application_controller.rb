@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def route_by_user_type
-    redirect_to companies_path if current_user.admin?
+    unless current_user.nil?
+      redirect_to companies_path if current_user.admin?
+    end
   end
 end
